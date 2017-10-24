@@ -1,0 +1,235 @@
+https://channel9.msdn.com/Blogs/raw-tech/A-Chat-With-Codecademy-Co-founder-Ryan-Bubinskia
+changelog.com/founderstalk
+http://www.arabicplayground.com/product/arabic-alphabet-flashcards
+---
+to listen for founder talk
+difficult to founder talk
+but i dont them founder, which i am getting videos
+---
+even same with arabic word
+i almost forgot
+again i have to search for one arabic word with picture and voice
+---
+1 on 1 ons
+listen
+hows things going
+Are you enjoying work
+
+
+tough to give, listen to guidance
+
+guidance clarity, caring 	
+
+hated to going to him, for help
+
+made me feel like dont care
+asshole boss: dont have clarity, dont have care
+
+too nice, but not clarity:
+fired, but not giving why you are fired
+ dont want to hurt feelings
+
+might be hard to hear: good clarity, good care
+But you know it comes from  a good place
+
+----
+nurture relation, care people
+give guidance immediately
+guidance should be in person
+ not email, not chat
+
+deal with bad habits
+be aware of bad habits
+---
+how to be coah/mentor?
+
+painting 
+shared visioh
+
+flowing from vision to aim
+goal
+quarterly, yearly
+---
+online seminar, webinar
+---now
+upcoming webinars
+on deman webinars
+---
+online broadcasting now
+---
+younow.com
+audionow.com
+shoutcast.com
+broadcastnow
+---
+1. Tag your broadcast
+
+Adding a tag helps people discover you.
+# 
+ask_questions
+#musicians #dance #girls #bored #guys #ask_questions #random #singing #girl #musical.ly #talk #lgbt #-bored #truthordare #chill #alternative #humor #gaming #sleepingsquad #beauty #advice #youtuber #music #younowandchill #art #jacobsartorius #hiphop #makeup #pets #cooking #dj #parents
+2. Share
+---
+what tag to share
+you.now
+--
+apis core
+we print buildings
+--
+mostafa
+---
+construction 3d
+shipping 3d printer of building 
+assembling
+height restriciton of building
+cost of building
+---
+as of only walls,sections
+moving the building parts
+then assembling
+---
+building 3d printer should be compact
+fits easily on 2 ton small lorry/van
+---
+system commissioning on-site takes no more than a hour
+---
+Apis Cor  3D residential house
+---
+concrete mixture as ink
+protective tent
+---
+geopolymer concreate
+  print in summer, winter
+---
+horizontal fibergalss workplace
+---
+38 meters construction cost: 10,000
+
+$275 per square
+price include
+all material
+all works
+foundation
+roof
+inner and outer finishing
+wall insulation
+windows
+floors
+suspended ceilings
+---
+70% economy'
+---
+wireless power
+1.9 kilowatts  of power
+--
+volumetric
+ wireless power for livable space
+---
+metalic rooms
+3 dimensional chargeing
+---
+wall , ceiling, floor  all made from aluminium
+current genrate mangetic fields
+---
+pdf my site
+PDFmyURL logo
+Pricing
+HTML to PDF API
+Save as PDF link
+Help 
+Convert a full website to PDF
+
+With a business license you can make use of our easy-to-use website to PDF conversion page. With a few simple clicks you can choose which website to convert and we'll then create a PDF of the entire website for you. We use the conversion options (such as page size and orientation) that you select in our members area. As soon as we're done with the PDF we'll send you an email so you can download it.
+
+Features
+
+Convert a whole website to PDF in one go.
+No need for you to be online - we notify once your PDF is ready.
+Use many options to control the PDF layout such as page size, orientation and header & footer.
+Apply watermarks or stamps on the PDFs.
+Protect and encrypt the PDFs you create.
+Usage
+
+The screen below is the one that you will see in our members area unless you have upgraded to the advanced version.
+
+convert entire website to pdf
+You just execute the following steps.
+
+Enter the URL of the website that you want to convert
+Schedule the conversion, grab a coffee and wait for the result!
+How the process works
+
+After you enter your site and schedule the conversion, we will try to gather all the pages of your website.
+
+If you have a sitemap
+
+We will first always try to find your sitemap (what is a sitemap?) to do this. If you don't have a sitemap yet, we strongly advise you to create one because that's the most reliable way to ensure we take the right pages. You can create one online here if you don't have a sitemap yet or if you don't know how to do this.
+
+Your XML sitemap needs to be listed in your robots.txt file or in the root of your domain, so if your site is http://www.example.com then your sitemap needs to be at http://www.example.com/sitemap.xml. You can find out more about sitemaps at sitemaps.org.
+
+If you don't have a sitemap
+
+If you don't have a sitemap or choose not to install one then our software will try to gather all the pages of your website by crawling through the website. This is done in a manner that other crawlers (e.g. search engines like Google, Bing etc) also use. Our software will try to do its best, but will not be able to crawl Javascript links nor will it always be able to identify duplicate pages correctly (e.g. when you use pages with query parameters).
+
+Layout options for your PDF
+
+The options that you have set and saved in the members area home page, are also the ones that we will use for the website to pdf conversion. So if you want all pages in A4 / portrait format, then you first set those options in the members area and save them and then start the website to PDF conversion process.
+
+How many pages can I convert?
+
+The website conversion process counts every webpage in your website as one conversion so if your website contains 500 pages then you will be able to do this process exactly ONCE with a Starter License, because that package allows 500 PDFs.
+
+Limitations
+
+In order to protect our systems and our other customers from servers being overused, we have the following default limitations. These limits can be lifted on request, but a surcharge will apply. Please inquire for a possible upgrade of your license.
+
+You can submit a maximum of one website at a time
+If you want to convert an entire website, then it must have a maximum of 500 webpages
+When a website has no sitemap, we crawl a maximum of 10 levels deep and up to 2000 pages
+Your PDFs are stored up to two days so please download your result before that
+GET A LICENSE!
+Converts entire websites
+Many conversion options
+Easy to use
+Sign Up!
+Terms & Conditions   Privacy Policy   License AgreementPlans and Pricing   FAQ   Contact Us   Login
+---
+:sum #=> Atoms
+1.0 #=>Numbers
+[1,2] #=> List
+"strings" #=>strings
+{key, value} #>Tuples with two elemnts
+---
+in order to inject the value of number variable
+unquote has to be used inside quoted rep
+
+iex> number = 13
+iex>Macro.to_string(quote do: 11 + unquote(number))
+"11+13"
+
+unquote_splicing
+---
+explicit is better than implicit
+clear code is better  than concise code
+---
+
+defmacro/2
+---
+defmodule Unless do
+	def fun_unless(clause, do: expression) do
+		if(!clause, do: express)
+	end
+
+	defmacro macro_unless(clause, do: epxression) do
+
+		quote do
+			if(!unquote(clause), do: unquote(expression))
+		end
+	end
+
+end
+---
+https://hexdocs.pm/ecto/getting-started.html
+top free screen recording software 
+
+http://elearningbrothers.com/top-10-screen-recording-software-for-windows/

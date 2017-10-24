@@ -1,0 +1,9 @@
+5th/30 day
+1)build product
+2)apply remote job
+3)attend online webinar
+4)attend physical event if exist
+5)join online hackathon
+6)check elixir forum
+7)learn elixir phoenix tutotorial
+8)learn a arabic world
