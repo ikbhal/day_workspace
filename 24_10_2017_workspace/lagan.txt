@@ -254,3 +254,347 @@ uploads video to YouTube for sharing
 Cons
 no webcam recording
 saves recordings as WMV only
+---
+Elm tutorial
+
+---
+ikbhal@mobi MINGW64 /d/elm-tutorial-app (master)
+$ yarn start
+yarn run v1.2.1
+$ nf start
+'nf' is not recognized as an internal or external command,
+operable program or batch file.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this comm
+and.
+
+---
+->create todo Schema(table )
+---
+https://hexdocs.pm/ecto/Ecto.Migration.html
+
+mix ecto.gen.migration add_todo_table
+---
+->I have already Created Phoenix app.
+You can see now
+-> created migration fil
+I am trying to adding todo table 
+--
+lets check whether it created or not
+--
+it created now
+Lets fill Elixir
+---
+I created migration now.
+->Lets run it.
+mix ecto.migrate
+---
+it ran now
+---
+lets check in the db.
+we just now saw it created table
+---
+we can rollback migration too
+
+mix ecto.rollback
+
+outputs says it dropped table todos
+now lets check it now
+
+no table right now
+---
+okay i want the table now
+so i am going to run again the migrate
+lets see if it going to create table todos again or not
+--
+
+i already created , lets drop rollback, recreate it back
+mix ecto.rollback
+--
+its not working
+lets delete table from postgresql admin pgadmin
+i deleted
+now lets run migrate
+mix ecto.migrate
+
+done it created table
+---
+
+ecto insert row in table
+---
+todo add form
+iex insert todo row in todos table
+
+how to load phoenix app interactively
+https://github.com/elixir-ecto/ecto/wiki/Ecto-Basics
+iex -S mix
+
+todo = %Todo
+--
+
+1)Lets create Ecto Schema
+
+refernce:https://github.com/elixir-ecto/ecto/wiki/Ecto-Basics
+file: lib/friends/person.ex
+template:
+defmodule Friends.Person do
+  use Ecto.Schema
+
+  schema "people" do
+    field :first_name, :string
+    field :last_name, :string
+    field :age, :integer
+  end
+end
+
+but i want differnet name for my Schema 
+Lets say it Todo
+my phoenix app name is Tod as well
+i need to change above file name, content accordingly
+
+---
+lets check now in IEx session
+iex -S mix
+
+person = %Friends.Person{}
+todo = %Todo.Todo{}
+---
+seems like one obstacle for now
+---
+1)Lets create simple Phoenix app only
+
+run the command
+mix phx.new todoapp
+it creats folder you can see
+
+---
+Then configure your database in config/dev.exs and run:
+
+    $ mix ecto.create
+---
+I already started postgresql server
+i need to update credentials also
+mine is 
+username: postgres
+password: password
+
+done
+---
+we need to create a database with name todoapp_dev
+i will create through pgadmin
+---
+i have old database todo_dev, confusing
+i am going to delete it now
+--
+for our newly created databse todoapp_dev, we dont have table
+--
+no need to create database from pgadmin(postgres admin)
+if you configure dev.exs file
+and run mix ecto.create 
+it will create database as well
+---
+1)lets delete database from pgadmin
+2)and run the command
+mix ecto.create
+---
+congrats
+it created database
+---
+now lets run our app
+---
+mean while you can create others things like
+1)migrations
+2)Schema
+---
+our app started now
+---
+lets create schema
+mix ecto.gen.migration add_todo_table
+Now run the migration
+mix ecto.migrate
+---
+check the database for table todos
+---
+lets create Todo Schema
+--
+lets try on IEx session for creating todo instance
+and insert into db.
+---
+i will add changeset later
+now lets see
+---
+$ iex -S mix
+Compiling 1 file (.ex)
+Generated todoapp app
+Interactive Elixir (1.5.1) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)> todo = %Todoapp.Todo{title:"Create Todo Model", completed:false}
+** (SyntaxError) iex:1: unexpected token: "olumn 23, codepoint U+001B)
+
+iex(1)> todo =%Todoapp.todo{}
+** (SyntaxError) iex:1: unexpected token: "olumn 1, codepoint U+001B)
+
+i dont understand why it throwing error.
+till now we success
+---
+trying to drop database
+mix ecto.drop
+dropped the database
+if you open even pgadmin console, it wont drop it.
+so close pgadmin, then drop with ecto.drop
+---
+so recreate database
+mix ecto.create
+run the migration
+mix ecto.migrate
+---
+iex -S mix
+t = %Todoapp.Todo{}
+t = %{t | title: "Create todoap", completed: false}
+---
+again same issue
+is it issue with completed
+--
+ todo = %Todoapp.Todo{title:"Create Todo app"}
+** (SyntaxError) iex:1: unexpected token: "olumn 23, codepoint U+001B)
+---
+defmodule Post do
+  use Ecto.Schema
+
+  schema "posts" do
+    has_one :permalink, Permalink
+
+    # Specify the association with custom source
+    has_one :category, {"posts_categories", Category}
+  end
+end
+
+# The permalink can come preloaded on the post struct
+[post] = Repo.all(from(p in Post, where: p.id == 42, preload: :permalink))
+post.permalink #=> %Permalink{...}
+
+0---
+calculating blood pressure from systolic and diastolic
+--
+Create controller
+Phoenix controller, named TodoController
+---
+1)lets recreate new app called todoapp
+mix phx.new todoapp
+
+mix phx.server
+http://localhost:4000
+mix ecto.gen.migration add_todo_table
+mix ecto.migrate
+iex -s mix
+person = %Friends.Person{}
+Friends.Repo.
+ person
+
+---
+reference
+----
+mix ecto.gen.migration create_people
+priv/repo/migrations
+defmodule Friends.Repo.Migrations.CreatePeople do
+  use Ecto.Migration
+
+  def change do
+    create table(:people) do
+      add :first_name, :string
+      add :last_name, :string
+      add :age, :integer
+    end
+  end
+end
+---
+lib/friends/person.ex
+defmodule Friends.Person do
+  use Ecto.Schema
+
+  schema "people" do
+    field :first_name, :string
+    field :last_name, :string
+    field :age, :integer
+  end
+end
+
+---
+Friends.Person module inside lib/friends/person.ex now:
+
+def changeset(person, params \\ %{}) do
+  person
+  |> cast(params, ~w(first_name last_name age))
+  |> validate_required([:first_name, :last_name])
+end
+
+---
+{ :error, changeset } = Friends.Repo.insert changeset
+
+person = %Friends.Person{}
+changeset = Friends.Person.changeset(person, %{first_name: "Ryan", last_name: "Bigg"})
+changeset.valid?
+
+case Friends.Repo.insert(changeset) do
+  { :ok, person } ->
+    # do something with person
+  { :error, changeset } ->
+    # do something with changeset
+end
+---
+case Friends.Repo.insert(changeset) do
+  { :ok, person } ->
+    # do something with person
+  { :error, changeset } ->
+    # do something with changeset
+end
+
+---
+Friends.Person |> Ecto.Query.first
+---
+require Ecto.Query
+Ecto.Query.from p in Friends.Person, order_by: [asc: p.id], limit: 1
+---
+Friends.Person |> Ecto.Query.first |> Friends.Repo.one
+--
+Friends.Person |> Ecto.Query.last |> Friends.Repo.one
+---
+Friends.Person |> Friends.Repo.all
+---
+Friends.Person |> Friends.Repo.get(1)
+---
+Friends.Person |> Friends.Repo.get_by(first_name: "Ryan")
+---
+Friends.Person |> Ecto.Query.where(last_name: "Smith") |> Friends.Repo.all
+---
+Updating records
+person = Friends.Person |> Ecto.Query.first |> Friends.Repo.one
+changeset = Friends.Person.changeset(person, %{age: 29})
+Friends.Repo.update(changeset)
+case Friends.Repo.update(changeset) do
+  {:ok, person} ->
+    # do something with person
+  {:error, changeset}
+    # do something with changeset
+end
+---
+Deleteing records
+person = Friends.Repo.get(Friends.Person, 1)
+Friends.Repo.delete(person)
+---
+many_to_many :tags, MyApp.Tag, join_through: "posts_tags"
+ has_one :category, {"posts_categories", Category}
+---
+lets try create schema and mgirations
+---
+<div class="jumbotron">
+	<p>Add  Todo Form</p>
+	<%= form_for @changeset, todo_path(@conn, :create), fn f -> %>
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<input type="text" class="form-control" id="name"/>
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	<% end %>
+</div>
+---
+https://hexdocs.pm/phoenix_html/1.0.0/Phoenix.HTML.Form.html

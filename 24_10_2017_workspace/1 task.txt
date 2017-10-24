@@ -1,0 +1,10 @@
+Elixir Phoenix create simple bootstrap form
+
+done
+
+Phoenix form handling
+
+https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html
+http://phoenix.thefirehoseproject.com/5.html
+
+MytodoWeb.Router.Helpers.page_path(MytodoWeb.Endpoint, 
