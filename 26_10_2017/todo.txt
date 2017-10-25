@@ -1,0 +1,9 @@
+7th/30
+1)complete product
+2)apply remote jobs
+3)write on blog, upload to youtube
+4)practice ds & algorithm
+5)Take break enough time, do house chores , family time
+6)Clojure script, clojure, dataomic, graphql, concurrent
+yada, bidi, aero, databases with Clojure
+7)learn server architecture
