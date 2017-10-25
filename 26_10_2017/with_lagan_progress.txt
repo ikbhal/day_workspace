@@ -210,3 +210,52 @@ user=> (html [:script])
 user=> (html [:p])
 "<p />"
 https://github.com/weavejester/hiccup                 
+---
+datomic
+fully transactonal
+cloudy ready 
+distributed database
+--
+http://docs.datomic.com/tutorial.html
+http://docs.datomic.com/query.html
+
+https://en.wikipedia.org/wiki/Datomic
+Datalog is a declarative logic programming language that syntactically is a subset of Prolog. It is often used as a query language for deductive databases. In recent years, Datalog has found new application in data integration, information extraction, networking, program analysis, security, and cloud computing.[1]
+http://docs.datomic.com/query.html
+
+---
+slatstack, hcl langugae, jaascript, framework
+---
+https://www.udemy.com/building-microservices-with-clojure/
+---
+In this Building Microservices with Clojure and Pedestal training course, expert author Scott Rehorn will teach you how to set up, modify, and deploy a basic microservice based on Clojure and Pedestal. This course is designed for users that already have programming experience.
+
+You will start by learning about the stack and toolchain, then jump into using Pedestal. From there, Scott will teach you how to use Pedestal as a web services framework to handle request and response routing and content handling. This video tutorial also covers persistence, how to protect your endpoints with a simple API key strategy, and how to use XML in Clojure. Finally, you will learn about Java Interop. 
+
+Once you have completed this computer based training course, you will be fully capable of setting up, modifying, and deploying a microservice with Clojure and Pedestal. 
+---
+https://legacy-developer.atlassian.com/blog/2016/03/why-clojure/
+---
+https://en.wikipedia.org/wiki/Communicating_sequential_processes
+---
+https://github.com/clojure/core.async
+Facilities for async programming and communication in Clojure
+---
+https://vimeo.com/8672404
+http://clojure-doc.org/articles/language/concurrency_and_parallelism.html
+https://www.braveclojure.com/concurrency/
+http://www.fullstackclojure.com/web-frameworks.html
+---
+Comparisons to microframeworks like Flask/Sinatra
+
+Server side rendered applications in Clojure more closely resemble Flask and Sinatra than Django or Rails.
+
+Still, there's nothing packaged and ready to go that is truly analogous to Flask.
+
+One of the most popular web libraries in Clojure, Compojure, is more of a request routing library than a microframework because it doesn't even come with a web server to serve the requests. You don't get any default middleware nor even a default 404 page.
+
+The benefit of this is you can pick the components you want and can easily swap them out. For instance, if you don't like using the jetty server then you use aleph instead. I recommend that beginners just use Jetty and don't even worry about aleph and async code. Or if you don't like the way compojure does one-way routing then can choose to use something that gives you bi-directional routing like bidi instead.
+
+Unlike Ruby or Python where you'd be using a web server like webrick in development which isn't meant for production usage, jetty is production ready. There's no need to change servers when running in other environments
+
+A benefit of this is your local code and test environments mirror production more closely. I've had issues in the past with using thin or unicorn in Ruby that I didn't have locally with webrick.
