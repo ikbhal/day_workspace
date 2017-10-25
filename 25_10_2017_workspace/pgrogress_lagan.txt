@@ -1,0 +1,1081 @@
+<%= link todo.name, to: todo_path(@conn, :show, todo.id)%>
+I was able to complete todo app, thanks to god.
+Alhamdulillah
+
+1)lets upload to github.com
+---
+install sublime elixir extenions
+---
+completed editing, update
+http://phoenix.thefirehoseproject.com/7.html
+https://stackoverflow.com/questions/42265114/how-do-you-update-the-parameter-of-an-ecto-repo-struct
+
+room
+|> Room.changeset(%{body: "A Room"})
+|> Repo.update!()
+---
+publish on heroku
+but the problem is only one instac
+---
+why dont we have service which will allow free hosting for experiments
+---
+treet 
+learn arab world: 5 minutes
+---
+explore linebridge
+https://www.lionbridge.com/en-us/careers
+apply for rater
+fill address, eduation, contact, phone
+---
+i got reply from juxt for clojure position
+https://juxt.pro/blog/posts/rideon.html
+trying to read about their company, blog post
+read about clojure and apply it
+---
+clojure, clojurescript, figwheel, om, glos, compoent, zoromq, tower
+
+clojure and clojurescript both different
+clojurescript, figwheel https://github.com/bhauman/lein-figwheel
+frontend, backend same stack: clojure
+Tower library internalization
+https://github.com/ptaoussanis/tower
+Om -> dash board built
+https://github.com/omcljs/om
+
+https://github.com/stuartsierra/component
+https://github.com/ztellman/gloss
+ binary messages being passed back and forth.
+ ---
+ https://juxt.pro/blog/posts/rideon.html
+ ---
+ messager broker :
+ ZeroMQ 
+ --
+ https://github.com/Prismatic/schema
+ https://github.com/metosin/compojure-api
+ We used Compojure-api to give us a Swagger endpoint describing our RESTful services
+ http://www.ride-on.es/en/contact.html
+ ---
+ https://juxt.pro/blog/posts/rideon.html
+ https://github.com/topics/clojure
+ ---
+ why clojure?
+
+ https://github.com/topics/clojure
+ https://juxt.pro/clojure-in.html
+ https://juxt.pro/blog/casestudies
+ https://juxt.pro/blog/posts/clojure-in-social-superstore.html
+ ---
+ https://juxt.pro/training.html
+ Day Zero Course - 24th April 2018, price: £250 + VAT BOOK NOW
+Full Stack Course - 25th April 2018, price: £300 + VAT BOOK NOW
+Datomic & GraphQL Course - 26th April 2018, price: £300 + VAT BOOK NOW
+---
+Training Course: Day Zero
+
+Have you ever fancied dipping your toes into the Clojure waters and exploring functional programming? If so, then this is the course for you. We’ll start from the very beginning, and will help you choose and set up the Clojure development environment that suits you before gently strolling up the Clojure foothills together.
+This is a one-day course, designed for developers who have little or no exposure to Clojure or functional programming. It starts from the very beginning explaining the fundamentals of Clojure, helping developers to build up a basic proficiency in the language via the use of mentoring and immersive exercises.
+As a programming language, Clojure is a compact language which is easy to learn. We’ll create a simple project and teach you all the basics: data, functions, sequences, namespaces and the bits of the JVM you need to know.
+---
+Development environment setup
+The REPL
+Data
+Forms and functions
+Sequences
+Bringing it all together: functional programming
+Working with the JDK
+---
+Training Course: Full Stack
+
+This one day course is ideal for Clojure programmers tasked with building secure websites and REST APIs. The course is full of hands-on exercises building services to power a front to back web application using a stack comprising of JUXT’s bidi, yada and aero libraries, ClojureScript, Reagent, HTTP SSE, Swagger, Datomic and more.
+---
+clojure libraries
+yada(api), bidi(bidirecitonal http routing), swagger, aero(configuration)
+clojurescript(Leiningen)
+Reagent
+client to server communication REST api calls
+Sent Event(server push)
+Datamic Integration and queries
+--
+Datomic is a database by Cognitect, creators of Clojure. It is an immutable, log-based, graph database, built for horizontal read scalability. It employs datalog, a powerful declarative query language, providing SQL-level power, but with an simpler pattern-based syntax.
+---
+Build and interact with a datomic database
+Express complex queries via datalog
+---
+Respond to transactions in realtime
+Explore the benefits of implementing a GraphQL API
+Jump into a GraphQL library for Clojure
+Consume data from your GraphQL API
+---
+http://www.infoq.com/presentations/Simple-Made-Easy:
+---
+ect producing APIs. Clojure is a practical, pragmatic language meant to be used.
+A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time.
+--
+http://clojure.org/companies
+---
+http://sogrady-media.redmonk.com/sogrady/files/2015/01/lang.rank_.plot_.q1152.png
+http://www.itworld.com/article/2693998/big-data/clojure-developers-are-the-happiest-developers.html
+--
+clojure con
+https://t.co/cKptYbUdBY
+https://juxt.pro/blog/posts/clojure-in-university-health-network.html
+https://juxt.pro/blog/posts/native.html
+---
+https://juxt.pro/blog/posts/case-study-mailonline.html
+https://juxt.pro/blog/posts/case-study-mailonline.html
+REWRITING THE MAILONLINE
+Keeping the world’s busiest news website rolling
+---
+In 2013, The MailOnline, wanted to overhaul their news website, servicing 11.34 million readers worldwide each day. The revised website needed to be faster and more extensible, simpler and easier to maintain.
+
+
+https://www.youtube.com/watch?v=uk-CF7klLdA
+Programmer Anarchy by Fred George
+---
+13k lines
+---
+https://juxt.pro/blog/posts/course-notes-lisbon.html
+DELIVERING OUR FULL STACK TRAINING COURSE
+Notes from a training course in Lisbon
+---
+https://github.com/juxt/edge
+--
+We had a range of different operating systems and IDEs to contend with. There were no users of Arch Linux on this course - which is what we use at JUXT - instead, we had some Macs and a Windows environment in play. We were able to get moving in Windows by installing Git Bash and from there boot-clj, which is the build system we use for Edge.
+---
+Web routes with Bidi
+Secure APIs with Yada
+An SPA (single page application) using Reagent
+Updating the SPA data model using server-sent events produced by Yada
+Core.Async
+Spec
+Transducers
+An introduction to Datomic
+---
+https://juxt.pro/blog/posts/machines-and-the-scholar.html
+http://www.geraldmweinberg.com/Site/Consulting_Secrets.html
+http://www.paulgraham.com/avg.html
+https://github.com/boot-clj/boot\
+--
+Edge
+
+From "Datum edge". Also represents the 'edge' of our current thinking on the baseline architecture of Clojure projects. It contains architectural patterns for the rapid construction of robust and flexible systems.
+
+Features
+
+Edge is a simple project demonstrating the following:
+
+A boot-driven Clojure/ClojureScript dev and prod environment
+
+cd edge
+boot dev
+Browse to localhost:3000
+
+To fire up a REPL, open a new session and
+
+cd edge
+boot repl
+Make changes to the Clojure code and reset the system
+
+REPL-y 0.3.7, nREPL 0.2.12
+Clojure 1.8.0
+OpenJDK 64-Bit Server VM 1.8.0_92-b14
+        Exit: Control+D or (exit) or (quit)
+    Commands: (user/help)
+        Docs: (doc function-name-here)
+              (find-doc "part-of-name-here")
+Find by Name: (find-name "part-of-name-here")
+      Source: (source function-name-here)
+     Javadoc: (javadoc java-object-or-class-here)
+    Examples from clojuredocs.org: [clojuredocs or cdoc]
+              (user/clojuredocs name-here)
+              (user/clojuredocs "ns-here" "name-here")
+user> (reset)
+A SASS CSS build
+
+Make changes to the sass files under sass.
+
+API server
+
+A Stuart Sierra component reloaded project
+Use of schema.core/defrecord to validate your system's integrity on every reset
+Run all your tests with (test-all)
+bidi & yada for serving web resources and APIs
+ClojureScript REPL
+
+An optional ClojureScript REPL is available. Create a new REPL by connecting to localhost on port 5600. You can do this with boot, lein, CIDER or with another IDE. Once the REPL has started, launch the CLJS repl with the following:
+
+user> (cljs-repl)
+This should connect with your browser and you can then interactively work with cljs.
+
+Libraries
+
+aero
+aleph
+bidi
+hiccup
+selmer
+yada
+Editor integration
+
+Emacs / CIDER.el integration
+
+These instructions are for use with CIDER 0.15 (London). If your Emacs is using a previous version, you should upgrade now.
+
+From Emacs, use M-x cider-jack-in
+
+Generic CIDER-nrepl integration
+
+See Boot's instructions on CIDER repl, and run boot with boot cider dev
+
+Deployment
+
+A systemd wrapper script is provided in the top level directory. It takes a parameter which determines the Aero profile to use. In this way you can have multiple systemd units with different profiles on the same machine, even under the same username.
+---
+Pinned repositories 
+
+bidi
+Bidirectional URI routing
+
+ Clojure  712   77
+yada
+A powerful Clojure web library, full HTTP, full async
+
+ HTML  493   72
+aero
+A small library for explicit, intentful configuration.
+
+ Clojure  194   29
+edge
+The (b)leading edge
+
+ Clojure  143   20
+mach
+A remake of make (in ClojureScript)
+
+ Clojure  179   14
+tick
+Time as a value.
+--
+pack-datomic
+Datomic Packer and Terraform setup
+---
+lets start with clojure hello world
+---
+https://djpowell.github.io/leiningen-win-installer/
+leningen windows installer
+
+what is leiningen?
+it is a essential tool to create, build and automate clojure projects?
+counter clockwise eclipse plugin for clojure
+---
+file:main.clj
+(ns clojure.examples.hello
+	(:gen-class))
+(defn hello-world []
+	(println "Hello World"))
+(hello-world)
+---
+clj is clojure file extension
+
+(+ 1 2)
+3
+
+(str "Hello" "World")
+"Hello World"
+---
+(ns clojure.examples.hello
+	(:gen-class))
+(defn Exampe[]
+	(println (str "Hello World"))
+	(println (+ 1 2)))
+(Example)
+
+output: 
+Hello World
+3
+
+What is Namespaces?
+A namespace is used to define 
+logical boundary between modules defined in clojure. 
+---
+namespace is analogous to java package
+each clojure library belongs to namespace
+(require quoted-namespace-symbol)
+
+(ns clojure.examples.hello
+	(:gen-class))
+(require 'clojure.java.io')
+(defn Example []
+	(.exists (file "Example.txt")))
+(Example)
+---
+
+comments
+single line comments
+;; This program displays Hello World
+
+(ns clojure.examples.hello
+	(:gen-class))
+
+(defn Example []
+	(println "Hello World"))
+(Example)
+---
+Delimiters
+statements can be split or  delimited by 
+using  either the curved or square bracket braces
+
+(ns clojure.examples.hello
+	(:gen-class))
+(defn Example []
+	(print [+ 1 2 3]))
+(Example)
+---
+Whitespaces can be used in Clojure to split
+differnet components of a statement for better clarity.
+This can be done with assistance of the comm(,)
+operator.
+For example, the folliwng two statments are equivalent
+and the output of both statments wil be 15
+(+ 1 2 3 4 5)
+(+ 1, 2, 3, 4, 5)
+---
+map
+{:a 1, :b 2, :c 3}
+{:a 1 :b 2 :c 3}
+---
+symbol are equivalent to identifiers in other programming  language. But unlike other programming languages, the compiler ses the symbols as actual string values. As a symbol is a avlue, a symbol can be 
+stored in a collection, passed as an argument to a function, etc., just like any other object.
+
+A symbole can only contain alphanumeric charactesr and 
+`* + ! /. : - > ?`  but must not begin with a numeral or colon
+
+tutorial-point!
+TUTORIAL
++tutorial+
+----
+clojure project structure
+since clojure code runs on java virtual macine,
+most of the project structure within clojure is
+similar to what you would fine in a java project
+
+src, test, resources, target/classes, 
+Leiningen dependencies, classes, doc, target,
+project.clj, README.md
+---
+core.clj -> code of Clojure application
+pom.properties
+---
+project.clj
+(defproject demo-1 "0.1.0-SNAPSHOT"
+	:description "FIXME: write description"
+	:url "http://example.com/FIXME
+	:license {
+		:name "Eclipse Public License"
+		:url "http://www.eclipse.org/legal/epl-v10.html"
+	})
+	:dependencies [[org.clojure/clojure "1.6.0"]])
+
+----
+REPL (read-eval-print loop) is a tool for experimenting with Clojure code. It allows you to interact with running program and quicly try out of if things work out as they should. It does this by presenting you with a prompt where you can enter the code. t then read your input, evaluates it, prints the result and loops, presenting you with a prompt again.
+
+This process enables a quick feedback cycle that isnt possible in most other languages.
+
+Starting a REPL session.
+a REPL session can be started in Leiningen by typing the following command in the command line.
+lein repl
+=---
+Special variables in REPL
+*1, *2, *#
+user => "Hello"
+Hello
+user => "World"
+World
+user => (str *2 *1)
+HelloWorld
+----
+built in data types
+Integers
+decimal integers(Short, Long, Int)
+ex: 1234
+Octal Numbers -> octal representation
+ex: 012
+Hexadecimal Numbers 
+ex: 0xff
+Radix Numbers
+2r1111
+radix is integer from 2 to 36
+Floating point
+32 floating number
+default
+ex: 12.34
+scientific notation
+1.35e-12
+char -> charater literal
+ex:/e
+define with back slash
+Boolean(true or false)
+String(chain of character literals)
+ex: "Hello World"
+Nil -> NULL value of Clojure
+Atom -> provides a way to manage
+shared, synchronous, indepedant state.
+They are reference type like refs and vars.
+
+(ns clojure.examples.hello
+	(:gen-class))
+
+;; This program displays Hello World
+(defn Example []
+	;; The below code declares a integer variable
+	(def x 1)
+
+	;; The below code declares a float variable
+	(def y 1.25)
+
+	;; The below code declares a string variable
+	(def str1 "Hello")
+	(println x)
+	(println y)
+	(println str1))
+
+(Example)
+
+ouput:
+1
+1.25
+Hello
+---
+variables
+are defined by the 'def' keyworld. Its a bit different wherein the concept of variables has more to do with bindings. In Clojure, a value is bound to a variable. One key things to note in clojure is that variable are immutable, which means that in order for the value of the variable to change, it needs to be destroyed and recreated again.
+
+syntax
+(def var-name var-value)
+
+---
+(ns clojure.examples.hello
+	(:gen-class))
+
+;; This program displays Hello World
+(defn Example []
+	;; The below code declares a integer variable
+	(def x 1)
+
+	;; The below code declares a float variable
+	(def y 1)
+
+	;; The below code declarea a string variable
+	(def str1 "Helo")
+
+	;; The below code declares a boolean variable
+	(def status true))
+
+(Example)
+----
+Naming variables 
+The name of a variable can be compose fo letters, digits, and the underscore character. It must begin with either a letter or a underscore. Upper and lowercase letters are distinct because Clojure, just like Java is case-sensitive programming language.
+
+Example
+Following are some examples of variable naming in Clojure.
+(ns clojure.examples.hello
+	(:gen-class))
+
+;; This program displays Hello World
+(defn Example []
+	;; The below code declares a Boolean variable with name of status
+	(def status strue)
+
+	;; The below code declares a Boolean variable with the name of status
+	(def STATU false)
+
+	;; The below code declares a variable with an underscore character
+	(def _num1 2))
+
+(Example)
+
+---
+printing variables
+(def x 1)
+(def y 1.25)
+(def str1 "Helllo")
+(println x)
+(println y)
+(println str1)
+
+----
+Operator
+tells the compiler to perform specific mathematical or logical manipulatons
+Arithmetic operators
+Relationsal operators
+Logical operators
+Bitwise operators
+
+
+Syntax
+(operator operand1 operand2 operadn)
+(+ 1 2)
+---
+(+ 1 2)
+(- 2 1)
+(* 2 2)
+(float(/ 3 2))
+1.5
+inc 5
+6
+dec 5
+4
+max 1 2 3
+3
+min 1 2 3
+1
+rem 3 2
+1
+;; Remainder of dividing the first number by second.
+
+---
+Relations operators
+(= 2 2)
+true
+(not = 3 2)
+true
+(< 2 3)
+true
+(<= 2 3)
+true
+(> 3 2)
+true
+(>= 3 2)
+true
+---
+Logical operator
+
+(or true true)
+true
+(and true false)
+false
+(not false)
+true
+---	
+bitwise operator
+bit-and
+bit-or
+bit-xor
+bit-not
+---
+Operator precedence
+no need to worry about operator precedence.
+This is one of the benefits of S-Expresions and prefix notation. All functions evaluate left to right and inside out. The operators in Clojure are just functions, and everything is fully parenthesized.
+---
+loops
+while statement
+Doseq statement (for each) iterate over sequence
+Dotimes statement , execute a statement x number of times
+Loop statement
+The loop special form is not like a for loop. The usage of loop is the same as the let binding. However, loop sets as recursion point.
+
+---
+(while(express)
+	(do 
+		codeblock))
+
+Example
+(ns clojure.examples.hello
+	(:gen-class))
+
+;; This program displays Hello World
+(defn Example[]
+	(def x (atom 1))
+	(while (< @x 5)))
+		(do
+			(printl @x)
+			(swap! x inc))))
+(Example)
+ouput
+1
+2
+3
+4
+
+atom, which is a value which can be modified.
+Then our condition in the while loop is that we are 
+evaluating the condition of the expression to be such as 
+
+the swap statement is used to populate the atom variable x  with new incrementd value
+
+---
+(doseq (sequence)
+	statement#1)
+---
+Example
+(ns clojure.examples.hello
+	(:gen-class))
+
+;; This program displays Hello World
+(defn Example []
+	(doseq [n [0 1 2]]
+	(println n)))
+
+(Example)
+---
+output
+0
+1
+2
+---
+do times statement is used to execute a statement x number of times
+Syntax
+(dotimes (variable value)
+	statement)
+
+Example
+(defn Example []
+	(dotimes [n 5]
+		(println n)))
+(Example)
+
+output
+---
+0 
+1
+2
+3
+4
+---
+loop [bindings]
+(condition 
+	(statement)
+	(recur (binding)))
+
+Eample
+(ns clojure.examples.hello
+	(:gen-class))
+
+(defn Example []
+	(loop [x 10]
+		(when (> x 1)
+			(println x)
+			(recur (- x 2)))))
+(Example)
+--
+output: 10, 8, 6, 4, 2		
+---
+Decision making structures
+
+if(condition) statement#1 statement#2
+(defn Example [] (
+	if ( = 2 2)
+	(println "Values are equal")
+	(println "Values are not equal")))
+
+(Example)	
+
+--
+if(condition)(
+	statement#1
+	statement#1.1
+)
+
+(
+	statement #2
+	statemetn #2.1
+)
+---
+(defn Example [] (
+	if (= 2 2)
+		(do(println "Both the values are equal")
+			(println "true"))
+
+		(do(println "Both the values are not equal")
+			(println "false"))))
+(Example)
+
+output
+---
+Both the values are equal
+true			
+---
+(defn Example[] (
+	if ( and (= 2 2) (= 3 3))
+	(println "Values are equal")
+	(println "Values are not equal")))
+(Example)
+---
+ouptut
+Values are equal
+---
+
+case expression
+value1 statement #1
+value2 statement #2
+valueN statement #N
+statement #Default
+
+---
+
+(defn Example []
+	(def x 5)
+	(case x 5 (print "x is 5")
+		10 (println "x is 10")
+		(println "x is neither 5 or 10")))
+
+(Example)
+---
+output
+x is 5
+
+---
+Clojure offers another evaluation statement called the 'cond' statement. This statement takes a set of test/expression pairs. It evaluates each ttest one at a time. If a test retruns logical true, 'Cond' evalutes and returns the value of the corresponding expression and doesnt evaluate any of other tests or expression. 'cond' returns nil.
+
+Syntax
+cond
+(expression evaluation1) statement #1
+(expression evaluation2) statment #2
+(expression evaluetion N) statement #n
+:else statement #default
+
+Example
+(ns clojure.examples.hello
+	(:gen-calss))
+
+(defn Example []
+	(def x 5)
+	(cond
+		(= x 5) (println "x is 5")
+		(= x 10) (println "x is 10")
+		:else (println "x is not defined")))
+
+(Example)
+---
+Output
+x is 5
+---
+Functions
+
+---
+(defn Example []
+	(def x 1)
+	(def y 1.25)
+	(println x)
+	(println y))
+(Example)
+--
+anonymous function is function which has no nmae associted with it.
+(defn Example []
+	((fn [x] (* 2 x)) 2))
+(Example)
+---
+output
+4
+
+---
+number of parameters is function raity.
+(defn demo [] (* 2 2))
+(defn demo[x] (* 2 x))
+(defn demo [x y] (* 2 x y))
+
+o-arity, 1-arity, 2-arity
+---
+variadic funtions are functions that take everytihng 
+varying number of argumetns. Function can also specify the & ampersand symbol to take in an arbitary number of arguments
+
+(defn demo
+	[message & others]
+	(str message (clojure.string/join "" others)))
+
+& symbol next to the argument others, which means that it can take an arbitrary number of argumetns.
+
+(demo "Hello" "This" "is" " the" "message")
+output
+"HelloThis is the message"
+---
+High-order function (HOFs) are functions that take other functions as argumetns. HOFs are an important functional programming technique and are quite commonly used in Clojure. One example of an HOF is a function taht takes a function and  ac ollection and retuns a collection of elemtns that satisfy a conditon(a predicate)
+In clojure, this function is called clojure.core/filter
+
+example
+(filter even?(ragne 0 10))
+output
+(0 2 4 6 8)
+
+--
+Numbers
+derived from java classes
+(def x 5)
+(println (type x))
+Java.lang.long
+
+Number tests
+zero? ;; returns true if number is zero or else false
+pos? ;; returns >0
+neg? ;; returns <0
+even? ;; return if even numbef
+odd?
+number? ;; if number
+integer? ;; if integer
+float? ;; if float
+---
+
+tail recursion, major feature of functional languages
+recur special form is the one that implements tail recursion.
+recur must be called in the tail positon.
+
+(defn Example []
+	(loop [i 0]
+		(when (< i 5)
+		(println i)
+		(recur (inc i)))))
+(Example)
+--
+output: 0, 1, 2, 3, 4
+
+---
+File/IO
+reading
+
+clojurel.core.slup -> to read entier file to string
+
+(def string1 (slurp "Example.txt"))
+(println string1)
+---
+
+clojure.java.io/reader
+createa a reader buffer, which is used to read each line of the file
+(defn Eample [])
+	(with-open [rdr (clojure.java.io/reader "Example.txt")])
+	(reduce conj [] (line-seq rdr)))
+
+output:
+line: Example1
+line: Example2
+---
+(spit "Example.txt"
+	"This is a string")
+---
+as write, write content, cllose files
+
+--
+writing to files one line at  a time
+(defn Example []
+	(with-open [w (clojure.java.io/writer "Example.txt" :append true)]
+		(.write w (str "hello" "world"))))
+
+(Example)
+
+---
+read-line
+(.exists(clojure.java.io/file "Example"))
+
+---
+software transactional memory steym (STM), exposed through dosync, ref, set, alter, etc.
+Supports sharing changing state between threads in a synchronous and coordinated manner. 
+
+The agent system supports sharing changing state between threads in an asynchronous and independent mannger.
+
+The atoms system supports sharing changing state between threads in a synchronous and independent manner.
+
+The dynamic var system, exposed through def, binding, etc. suports isolating changing state within threads.
+
+In clojure there are no locks, but Indirect reference to immutable persistent data structures.
+
+There are three types of reference in Clojure.
+
+Vars - Changess are isolated in threads.
+Refs - changes are synronized and coordinated between threads.
+Agents - Involves asynchronous indepedent changes between threads.
+
+
+Transactions.
+Concurrency in Clojure is based on transactions. 
+References can only be changed within a transaction.
+
+
+---
+dosync
+
+(dosync expression)
+
+parameter 'expression'
+---
+(def names (ref []))
+
+(defn change [newname]
+	(dosync
+		(alter names conj newname)))
+
+(change "John")
+(chane "Mark")
+(println @names)
+
+---
+see-saw libray to create desktop application
+
+
+---
+ns web.core
+   (:gen-class)
+   (:require [seesaw.core :as seesaw]))
+(def window (seesaw/frame
+   :title "First Example"
+   :content "hello world"
+   :width 200
+   :height 50))
+(defn -main
+   [& args]
+   (seesaw/show! window)
+   (seesaw/config! window :content "Good Bye"))
+
+ ---
+ to create a web application in clojure you ned to use Ring application library, which a
+ Compojure framework
+  This allows one to create routes, which is now how 
+  most modern web appliation are developed
+
+ Ring libray
+ 	web server jetty
+ 	request to map
+ 	result to map
+
+ ---
+ (ns my-webapp.handler
+ 	(:require [compojure.core :refer :al]
+ 		[compojure.route :as route]
+ 		[ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+
+ (defroutes app-routes
+ 	(GET "/" [] "Hello Word")
+ 	(route/not-found "Not Found"))
+
+ (def app
+ 	(wrap-defaults app-routes site-defaults))
+
+ ---
+ Testing for Client Applications
+ speclj
+
+ Test data driven or Behavior driven test framework for clojure
+
+ spec directory
+ (n change.core-spec
+ 	(:require [speclj.core : refer :all]))
+
+ (describe "Truth"
+ 	(it "is true"
+ 		(should true))
+ 	(it "is not false"
+ 		(should-not false)))
+ (run-specs)
+
+---
+selenium
+
+(ns my-webapp.handler
+	(:require [compojure.core :refer :all]
+		[compojure.route :as route]
+		[ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+
+(defroutes app-routes
+	(GET "/" [] "Hello World")
+	(route/not-found "Not Found"))
+
+(def app
+	(wrap-defaults app-routes site-defaults))
+
+
+----
+(defn Example []
+	(try
+		(agent (int-array [1 2 3]) 5)
+		(catch Exception e (println (str "caught exception: " (.toString e))))
+		(finally (println "This is our final block")))
+	(println "Lets move on"))
+
+(Example)
+---
+(try 
+	(// protected code)
+	(catch Exception e1)
+	(// Catch  blcok)
+
+
+---
+List
+ISeq 
+(println (list 1 2 3 4))
+list created with list functon
+
+(println (list 'a 'b 'c 'd))
+
+cons 
+element added to start
+
+conj: element added at end
+(conj (list 1 2 3) 4 5)
+
+(nth (list 1 2 3) 0)
+first 
+rest
+
+(println (rest (list 1 2 3)))
+(2 3)
+---
+(println (set '(1 1 2 2)))
+
+#{1, 2}
+
+--
+(println (sorted-set 3 2 1))
+(get (set '(3 2 1)) 2)
+contains?
+conj 
+disj
+union 
+(:require [clojure.set :as set])
+(println (set/union #{1 2} #{3 4}))
+set/difference#{1 2} # {3 4}
+intersection
+subset?
+superset?
+(vector 1 2 3)
+--
+sequence
+(seq [ 1 2 3])
+reverse
+first,last, rest, sort, distinct, concat, conj
+drop, take-last, take, split-at
+
+//regular expressionh
+//d+
+replace-first
+replace
+refind
+re-pattern
+
+(def pat (re-pattern "\\d+"))
+(def newstr (clojure.string/replace "abc123de" pat "789"))
+(println newstr)
+---
+(def my-ref (ref 1 :validator post?))
+(do sync
+	(ref-set my-ref 2))
+
+(println @my-ref)
+
+(ns clojure.examples.example
+   (:gen-class))
+(defn Example []
+   (def my-map (with-meta [1 2 3] {:prop "values"}))
+   (println (meta my-map))
+   (def new-map (vary-meta my-map assoc :newprop "new values"))
+   (println (meta new-map)))
+(Example)
+---
+(ns clojure.examples.example
+   (:gen-class))
+(defn Example []
+   (defmacro Simple []
+      (println "Hello"))
+   (macroexpand '(Simple)))
+(Example)
+----
+
+Clojure script
