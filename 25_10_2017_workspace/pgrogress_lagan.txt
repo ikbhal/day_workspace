@@ -1079,3 +1079,352 @@ re-pattern
 ----
 
 Clojure script
+
+ClojureScript is a robust, practical, and fast programming language with a set of useful features that together form a simple, coherent, and powerfool tool
+
+ClojureScript is a compiler for Clojure that targets JavaScript. It emits JavaScript code which is compatible with the advanced compilation mode of Google Closure optiming compiler.
+---
+Clojure is a dynamic, general-purpose programming langue supporting interactive development. Clojure is functional programming language featureing a rich set of immutable, persistent data structures. As a dialet of Lisp, it has a code-as-data phislosophy and powerful macro system.
+
+_---
+Leiningen, Boot, FigWheel or Maven based workflow 
+---
+Windows
+md src\hello_world & type nul >>core.cljs & move core.cljs src\hello_world
+
+(ns hello-world.core)
+
+(enable-console-print!)
+(println "Hello world!")
+
+First we declare our namespace. Every ClojureScript file must declare a namespace and this namespace must match a path on disk. We then enable direct printing to the commonly available javascript console object and print the famous message.
+
+In order to comile this we need a simple build script.
+ClojureScript is just a Clojure librarary and can be easily scripted in a few lines of Clojure.
+Create a file called build.clj next to the src directory and the cljs.jar file. Note the name of the file does not matter. In this tutorial we'll always make our compiler helper scripts at the root of the project directory.
+
+Add the followingClojure code
+(require 'cljs.build.api)
+(cljs.build.api/build "src"  {:output-to "out/main.js"})
+
+we require the cljs.build.api namespace. WE then invoke the standard function for building some Clojure Script source
+
+---
+Lets buid some clojure script
+java -cp cljs.jar:src clojure.main build.clj
+---
+index.html
+<html>
+	<body>
+		<script type="text/javascript" src="out/goog/base.js"></script>
+		<script type="text/javascript" src="out/main.js"></script>
+		<script type="text/javascript">
+			goog.require("hello_world.core")
+		</script>
+
+	</body>
+</html>
+---
+Google Closure Library
+
+(require 'clj.build.api)
+
+(cljs.build.api/build "src"
+	{:main 'hello-world.core
+	 :output-to "out/main.js"})
+
+---
+java -cp cljs.jar:src clojure.main build.clj
+--
+auto buildig
+(cljs.build.api/watch "src"
+	{:main 'hello-wrold.core
+	 :output-to "out/main.js"})
+
+--
+Browser REPL
+ClojureScript ships with builtin REPL support for 
+Node.js, Rhino, Nashorn, and browsers
+rlwarp
+---
+REPL script repl.clj
+(require 'cljs.repl)
+(require 'cljs.build.api)
+(require 'cljs.repl.browser)
+
+(cljs.build.api/build "src"
+  {:main 'hello-world.core
+   :output-to "out/main.js"
+   :browser-repl true
+   :verbose true})
+
+(cljs.repl/repl (cljs.repl.browser/repl-env)
+  :watch "src"
+  :output-dir "out")
+
+  -
+
+  http://localhost:9000.
+  ---
+  release.clj
+  ---
+  https://clojurescript.org/guides/quick-start
+  Oracle Nashorn: A Next-Generation JavaScript Engine for the JVM
+by Julien Ponge
+
+Scenarios for using Oracle Nashorn as a command-line tool and as an embedded interpreter in Java applications
+
+---
+https://github.com/bhauman/lein-figwheel
+Figwheel build your ClojureScript code and hotloads it into the browser as you are coding!
+--
+Bruce Hauman - Developing ClojureScript with FigWheel
+Interactive programming Flappy Bird in ClojureScript
+--
+http://boot-clj.com/
+---
+https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps
+---
+The following types of preprocessors are commonly used in combination with Source Maps:
+
+Transpilers (Babel, Traceur)
+Compilers (Closure Compiler, TypeScript, CoffeeScript, Dart)
+Minifiers (UglifyJS)
+---
+Windows
+
+Package managers:
+
+Chocolatey — choco install boot-clj
+Otherwise, download boot.exe, then:
+
+:: Using %SystemRoot% here, but can be any folder on user's %PATH%
+C:\> move boot.exe %SystemRoot%
+---
+https://github.com/boot-clj/boot#install
+boot repl -h
+---
+*
+https://www.youtube.com/watch?v=FMyk0Db9rQc&list=PLZdCLR02grLqCR8EKuil8NrffZuTl0kwL&index=12
+Clojure Scaling the Event Stream - Derek Troy West
+
+*
+https://www.youtube.com/watch?v=Ljvhjei3tWU&list=PLZdCLR02grLqCR8EKuil8NrffZuTl0kwL&index=11
+Datomic Made Easy Datomic in the Cloud - Stuart Halloway
+
+*
+https://www.youtube.com/watch?v=ipNru1QSeWc&list=PLZdCLR02grLqCR8EKuil8NrffZuTl0kwL&index=36
+Sequence and Concurrent Processing for Huge Genomic Data - Toshiki Takeuchi
+
+->
+https://www.youtube.com/watch?v=ELM_eKZXl3M&list=PLZdCLR02grLpzt6WENiHe16-vx74VbCw_&index=10
+
+*
+https://www.youtube.com/watch?v=NunlGbJgp4A&list=PLZdCLR02grLpzt6WENiHe16-vx74VbCw_&index=15
+Building a collaborative web app with ClojureScript - Gijs Stuurman
+
+*
+https://www.youtube.com/watch?v=EtWGDB_tm1Q&list=PLZdCLR02grLpzt6WENiHe16-vx74VbCw_&index=12
+Microservices with Vase and Linkerd - Peter Brachwitz
+
+
+---
+->
+https://www.youtube.com/watch?v=WoFNWGfa1qM&list=PLZdCLR02grLp4W4ySd1sHPOsK83gvqBQp&index=25
+---
+*
+https://www.youtube.com/watch?v=qijWBPYkRAQ&list=PLZdCLR02grLp4W4ySd1sHPOsK83gvqBQp&index=12
+Full Stack Teleport Testing with Om Next & Datomic - António Monteiro, Mike Kaplinskiy
+
+*
+https://www.youtube.com/watch?v=r5i_OiZw6Sw&list=PLZdCLR02grLp4W4ySd1sHPOsK83gvqBQp&index=17
+Testing Stateful and Concurrent Systems Using test.check - Eric Normand
+
+*
+https://www.youtube.com/watch?v=zwuFJovzdHg&list=PLZdCLR02grLp4W4ySd1sHPOsK83gvqBQp&index=19
+Clojure at 4,000 msg/s-What We Learned, Loved, and Loathed - Nathan Barnett
+
+https://www.youtube.com/watch?v=T-3dPkdG_qc&list=PLZdCLR02grLofiMKo0bCeLHZC0_2rpqsz&index=15
+A Clojure DSL for defining CI/CD orchestrations at scale - Rohit Kumar, Viraj Purang
+
+*
+https://www.youtube.com/watch?v=ELM_eKZXl3M&list=PLZdCLR02grLpzt6WENiHe16-vx74VbCw_&index=10
+Using Clojurescript to launch iOS/Android apps to 1M users - Emin Hasanov
+
+*
+https://www.youtube.com/watch?v=I0vVkQfmy9w&list=PLZdCLR02grLp4W4ySd1sHPOsK83gvqBQp&index=16
+Power to the (Mobile) People: Clojure and GraphQL - Howard Lewis Ship
+
+---
+https://reagent-project.github.io/
+
+--
+Reagent privides a minimalistic interface between ClojureScript and React.
+It allows you define a efficient React components using nothing but plain ClojureScript functions and data, that describe your UI using a Hiccup-like syntax.
+
+--
+Hiccup is Fact library for rendering HTML in Clojure
+https://github.com/weavejester/hiccup
+---
+(defn simple-component []
+ [:div
+ 	[:p "I am a component!"]
+ 	[:p.someclass]
+ 		"I have "]
+
+---
+{:properties
+ (fn [ctx]
+   (let [thing (-> ctx :parameters :query :thing)]
+    ;; For ETag generation
+    {:version thing}))
+
+ :methods
+ {:get
+  {:parameters {:query {:thing s/Str}}
+   :produces [{:media-type #{"text/html" "text/plain"}
+               :language #{"en" "fr" "de"}}]
+   :response
+   (fn [ctx]
+     (let [thing (-> ctx :parameters :query :thing)
+           message (case (yada/language ctx)
+                     "en" (format "Hello %s!" thing)
+                     "fr" (format "Bonjour, %s!" thing)
+                     "de" (format "Guten Tag! %s!" thing))]
+       (case (yada/content-type ctx)
+         "text/html" (str "<h1>" message "</h1>")
+         "text/plain" message)))}}
+
+ :access-control
+ {:scheme "Basic"
+  :verify (fn [[user password]]
+            (when (= [user password] ["guest" "guest"])
+              {:user "guest"
+               :roles #{"user"}}))
+  :authorization {:methods {:get "user"}}}}
+---
+protects it. Once you have, give it a try!
+
+{:properties
+ (fn [ctx]
+   (let [thing (-> ctx :parameters :query :thing)]
+    ;; For ETag generation
+    {:version thing}))
+
+ :methods
+ {:get
+  {:parameters {:query {:thing s/Str}}
+   :produces [{:media-type #{"text/html" "text/plain"}
+               :language #{"en" "fr" "de"}}]
+   :response
+   (fn [ctx]
+     (let [thing (-> ctx :parameters :query :thing)
+           message (case (yada/language ctx)
+                     "en" (format "Hello %s!" thing)
+                     "fr" (format "Bonjour, %s!" thing)
+                     "de" (format "Guten Tag! %s!" thing))]
+       (case (yada/content-type ctx)
+         "text/html" (str "<h1>" message "</h1>")
+         "text/plain" message)))}}
+
+ :access-control
+ {:scheme "Basic"
+  :verify (fn [[user password]]
+            (when (= [user password] ["guest" "guest"])
+              {:user "guest"
+               :roles #{"user"}}))
+  :authorization {:methods {:get "user"}}}}
+
+This doesn't look like any web handler you'd create by wrapping Ring middleware together. It's as much a declarative description of the handler as an implementation of one.
+
+With a declarative description we can know a lot about the service without running it, or knowing what the functions do. We know what methods it has (GET). We know what parameters are needed in the query string. We know what media types and languages are available. We even know what authentication scheme is in place, and what roles a user needs to access the resource.
+
+A huge advantage of this declarative approach is that handlers can be produced with data, and data can be generated on an industrial scale. This allows us to transition, finally, the development burden of writing HTTP services from a craft to an industry. We shall elaborate this point in a future post, but first, let's focus on how yada works.
+
+One Ring (handler) to rule them all
+
+Essentially, yada is a Clojure function that takes a declarative description (like the one above) and returns a Ring handler function. That's it!
+
+
+
+Due to yada's design, there is now just one Ring handler to forge (and we've already done the forging). Every developer using yada exploits the benefits of a single, expertly designed, Ring handler. What's more, as this handler improves these improvements are inherited by existing applications, often without requiring any developer intervention.
+
+So what features are contained within this handler?
+
+Parameter validation
+Content negotiation (media-types, charsets, encodings and languages)
+Conditional requests
+Method semantics
+Status codes
+Response body coercion
+Pluggable methods and media-types
+Authentication (basic, session, OAuth2, custom)
+Authorization (role-based, custom)
+Security headers
+Swagger
+Optional async
+Server sent events
+bidi integration
+Multipart request bodies
+Asynchronous uploads
+Schema validation (with coercion) of resource models
+Dynamic sub-resources
+Modifiable interceptor chains
+Test helpers
+Some of these are
+---
+http://thegeez.net/2017/01/04/wiki_clojure_yada_datomic_client.html
+http://clojure-liberator.github.io/liberator/
+http://boot-clj.com/
+---
+(get-env)
+Returns the whole environment map.
+(get-env key)
+Returns the value associated with the given key, or nil if the key is not found.
+set-env! key val & kvs)
+Sets the values for the given keys. Note that this may produce side effects, changes to the JVM's classpath, etc. 		
+---
+Reagent, clojurescript
+
+npm install -g re-ntala
+re-ntal init FutureApp
+cd future-app
+---
+transit format
+ compression, 
+ ---
+ clojure hello world
+
+(defn simple-component []
+  [:div
+   [:p "I am a component!"]
+   [:p.someclass
+    "I have " [:strong "bold"]
+    [:span {:style {:color "red"}} " and red "] "text."]])
+
+---
+(defn simple-parent []
+  [:div
+   [:p "I include simple-component."]
+   [simple-component]])
+
+--
+(defn hello-component [name]
+  [:p "Hello, " name "!"])
+
+(defn say-hello []
+  [hello-component "world"])
+
+---
+(ns example
+  (:require [reagent.core :as r]))
+(defn simple-component []
+  [:div
+   [:p "I am a component!"]
+   [:p.someclass
+    "I have " [:strong "bold"]
+    [:span {:style {:color "red"}} " and red "] "text."]])
+
+(defn render-simple []
+  (r/render [simple-component]
+    (.-body js/document)))   
