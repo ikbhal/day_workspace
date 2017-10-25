@@ -1,0 +1,212 @@
+aero
+A small library for explicit, intentful configuration
+
+installation
+[aero "1.1.2"]
+
+@clojars.org
+
+Getting started
+config.edn
+{:greeting "World!"}
+
+(require '[aero.core :refer (read-config)])
+(read-config "config.edn")
+
+or to read from the classpath like this
+
+(read-config (clojure.java.io/resource "config.edn"))
+
+Design goals
+explicit, intentful, obvious, but not clever
+
+Avoid duplication
+Config files are often duplicated on a per-environment basis, attracting all the problems associated with duplication
+
+Allow config to be stored in the source code repository
+
+while hiding passwords
+{:password #env DATABASE_URI}
+{:database #envf ["protocol://%s:%s" DATABASE_HOST DATABASE_NAME]}
+{:url #join ["jdbc:postgresql://psq-prod/prod?user="
+             #env PROD_USER
+             "&password="
+             #env PROD_PASSWD]}
+{:password #or [#env PORT 8080]}
+---
+{:webserver
+  {:port #profile {:default 8000
+                   :dev 8001
+                   :test 8002}}}
+---
+(read-config "config.edn" {:profile :dev})
+which will return
+
+{:webserver
+  {:port 8001}}                   
+---
+{:webserver
+  {:port #hostname {"stone" 8080
+                    #{"emerald" "diamond"} 8081
+                    :default 8082}}}  
+
+--
+{:debug #boolean #or [#env DEBUG "true"]
+ :webserver
+  {:port #long #or [#env PORT 8080]
+   :factor #double #env FACTOR
+   :mode #keyword #env MODE}}   
+
+                    --
+                    #user is like #hostname, but switches on the user
+
+---
+{:webserver #include "webserver.edn"
+ :analytics #include "analytics.edn"}               
+ --
+ (require '[aero.core :refer (read-config resource-resolver)])
+(read-config "config.edn" {:resolver resource-resolver})
+--
+#merge [{:foo :bar} {:foo :zip}]     
+--
+(defmethod reader `mytag
+ [{:keys [profile] :as opts} tag value]
+  (if (= value :favorite)
+     :chocolate
+     :vanilla))
+
+---
+{:db-connection "datomic:dynamo://dynamodb"
+ :webserver
+  {:db ^:ref [:db-connection]}
+ :analytics
+  {:db ^:ref [:db-connection]}}
+---
+(ns myproj.config
+  (:require [aero.core :as aero]))
+
+(defn config [profile]
+  (aero/read-config "dev/config.edn" {:profile profile}))
+
+(defn webserver-port [config]
+  (get-in config [:webserver :port]))
+  ---
+https://github.com/juxt/aero  
+https://clojars.org/aero
+---
+Clojure(Script) library for declarative data description and validation
+
+(ns schema-examples
+  (:require [schema.core :as s
+             :include-macros true ;; cljs only
+             ]))
+
+(def Data
+  "A schema for a nested data type"
+  {:a {:b s/Str
+       :c s/Int}
+   :d [{:e s/Keyword
+        :f [s/Num]}]})
+
+(s/validate
+  Data
+  {:a {:b "abc"
+       :c 123}
+   :d [{:e :bc
+        :f [12.2 13 100]}
+       {:e :bc
+        :f [-1]}]})
+;; Success!
+
+(s/validate
+  Data
+  {:a {:b 123
+       :c "ABC"}})
+;; Exception -- Value does not match schema:
+;;  {:a {:b (not (instance? java.lang.String 123)),
+;;       :c (not (integer? "ABC"))},
+;;   :d missing-required-key}
+---
+https://github.com/stuartsierra/component
+Managed lifecycle of stateful objects in Clojure
+---
+https://github.com/juxt/bidi
+---
+bidi is written to do 'one thing well' (URI dispatch and formation) and is intended for use with Ring middleware, HTTP servers (including Jetty, http-kit and aleph) and is fully compatible with Liberator.
+---
+user> (def route ["/index.html" :index])
+#'user/route
+Let's try to match that route to a path.
+
+user> (use 'bidi.bidi)
+nil
+user> (match-route route "/index.html")
+{:handler :index}
+---
+user> (path-for route :index)
+"/index.html"
+---
+user> (def my-routes ["/" {"index.html" :index
+                           "articles/" {"index.html" :article-index
+                                        "article.html" :article}}])
+#'user/my-routes
+We can match these routes as before :-
+
+user> (match-route my-routes "/index.html")
+{:handler :index}
+user> (match-route my-routes "/articles/article.html")
+{:handler :article}
+---
+user> (path-for my-routes :article-index)
+"/articles/index.html"
+--
+user> (def my-routes ["/" {"index.html" :index
+                           "articles/" {"index.html" :article-index
+                                        [:id "/article.html"] :article}}])
+#'user/my-routes
+Now, when we match on an article path, the keyword values are extracted into a map.
+
+user> (match-route my-routes "/articles/123/article.html")
+{:handler :article, :route-params {:id "123"}}
+user> (match-route my-routes "/articles/999/article.html")
+{:handler :article, :route-params {:id "999"}}
+---
+(require '[bidi.vhosts :refer [vhosts-model]])
+
+(def my-vhosts-model
+  (vhosts-model ["https://example.org:8443"
+                 ["/index.html" :index]
+                 ["/login" :login]]
+
+                ["https://blog.example.org"
+                 ["/posts.html" […]]]))
+---
+What is liberator?
+Liberator is a Clojure library that helps you expose your data as resources while automatically complying with all the relevant requirements of the HTTP specification (RFC-2616). Your resources will automatically gain useful HTTP features, such as caching and content negotiation. Liberator was inspired by Erlang’s Webmachine. By following the constraints and requirements in RFC-2616, liberator will enable you to create application according to a REST architecture.
+
+Liberator’s place in the Clojure ecosystem
+Liberator resources are ring handlers and fit nicely into Ring, the defacto Clojure web development environment. Typically you will use liberator together with a routing library like compojure or bidi and a library to generate the resources’ representations. The representations may be in HTML, generated with a library like hiccup, or they could be represented in something like JSON or XML by using the appropriate libraries.
+
+For more Information about adding the web server component required for liberator, see the Ring documentation.
+
+(ns example
+  (:use [liberator.core :only [defresource]]))
+
+(defresource hello-world
+  :available-media-types ["text/plain"]
+  :handle-ok "Hello, world!")
+
+ ---
+ user=> (use 'hiccup.core)
+nil
+user=> (html [:span {:class "foo"} "bar"])
+"<span class=\"foo\">bar</span>"
+The first element of the vector is used as the element name. The second attribute can optionally be a map, in which case it is used to supply the element's attributes. Every other element is considered part of the tag's body.
+
+Hiccup is intelligent enough to render different HTML elements in different ways, in order to accommodate browser quirks:
+
+user=> (html [:script])
+"<script></script>"
+user=> (html [:p])
+"<p />"
+https://github.com/weavejester/hiccup                 
