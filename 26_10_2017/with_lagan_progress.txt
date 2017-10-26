@@ -259,3 +259,196 @@ The benefit of this is you can pick the components you want and can easily swap 
 Unlike Ruby or Python where you'd be using a web server like webrick in development which isn't meant for production usage, jetty is production ready. There's no need to change servers when running in other environments
 
 A benefit of this is your local code and test environments mirror production more closely. I've had issues in the past with using thin or unicorn in Ruby that I didn't have locally with webrick.
+---
+Clojure has an abstraction for http like Rack in Ruby or WSGI in Python called Ring.
+
+Ring is an incredibly simple way to deal with requests and responses.
+
+Requests and responses are represented as a map and you simply chain middleware together that do request or response transformations. Ring middleware are just simply functions that wrap a handler function. It's functions all the way down.
+What libraries should you use?
+
+If you're wondering what libraries you should pick to get something resembling Sinatra or Flask, here's what I'd recommend:
+
+jetty
+compojure
+ring-defaults
+[[compojure "1.5.2"]
+ [ring/ring-core "1.5.0"]
+ [ring/ring-defaults "0.2.3"]
+ [ring/ring-jetty-adapter "1.5.0"]]
+Once you have a server you should pick a routing library. The most popular one for Clojure is compojure. It's well maintained, has good documentation, and you can easily find answers for your questions online.
+
+Finally, you should include ring-defaults. It's a configurable set of default middleware you can include for a site or an API. You'll get the ability to parse form params and have sessions in your application, for example. The nice thing is the middleware are already put in the right order for you.
+
+An example of a minimal Clojure web application
+
+Using the dependencies I listed above, you can achieve a minimal web application with something like this:
+
+(ns sample
+  (:require [compojure.core :as compojure]
+            [ring.adapter.jetty :as jetty]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+
+(compojure/defroutes app
+  (compojure/GET "/" [] {:body "Hello World!"
+                         :status 200
+                         :headers {"Content-Type" "text/plain"}}))
+
+(def wrapped-app (-> app
+                     (wrap-defaults site-defaults)))
+
+(defn -main []
+  (jetty/run-jetty #'wrapped-app {:join? false :port 8080}))
+The above gives you routing, basic middleware, and a web server.
+
+Deployment
+
+Deploying Clojure applications is going to be far easier and with less ceremony than Ruby or Python. You can just package everything up into a single uber jar or a war file and ship it to your server.
+
+No need to use anything like capistrano to ship your source files to a server.
+
+I'll write a post on deploying Clojure applications in the future.
+
+Finally, at the time of writing, there's a lot of new work being done on Clojure web frameworks:
+
+Duct
+Arachne
+
+Comparisons to full stack frameworks like Rails/Django
+
+You might be wondering what web development is like if nothing like Rails or Django exists in Clojure.
+
+I personally think the web development story in Clojure is mostly similar to Golang's, at least on the server side. What this means is you're probably writing many microservices and having a single page application on the client side.
+
+Even though I mentioned microservices, you're not at all required to do microservices with Clojure. In fact, it's often recommended that you don't start out doing microservices, since it's far easier to start out doing a monolith and then split it apart later when the boundaries are clear.
+
+Clojure offers a few unique benefits in web development because of clojurescript. Clojurescript allows you to share code between the backend and frontend. This feature is even better than node.js and javascript because clojurescript and clojure have the same standard library. I go into more detail about code sharing in my javascript vs clojure article,.
+
+Essentially what you'd do is write a backend API or services in Clojure use Clojurescript to make a single page app.
+
+I feel that the server side HTML rendering story in Clojure is not nearly as good as what you can get with clojurescript and client side rendering. Plus you can easily add react in when you use clojurescript
+
+ally any traditional full stack web frameworks for Clojure.
+
+Probably the closest thing you can find to a web framework like Rails in Clojure is Luminus.
+
+However, Luminus may be more accurately described as a project template that helps you make web applications than a web framework.
+
+Luminus is more like a project template because the Clojure community values composing small, modular libraries over large frameworks like Rails or Django. It helps you get started without having to hand pick each library you want to use and glue them together.
+
+On one hand this means you have to build your own library stack from picking libraries, which may be difficult for newcomers. On the other hand you know every part of your web application and can customize it as you see fit.
+
+Plus, composing and using the libraries together in Clojure isn't nearly as painful as you would think. This gives you a lot of flexibility, unlike something like Ruby on Rails where you're pretty much forced to use certain libraries chosen for you.
+
+
+A few more thoughts have come to mind after writing the original post.
+
+I realized that I didn't talk about the clojurescript side of things.
+
+Clojurescript provides a great alternative to plain javascript or ES6. The thing about clojurescript is clojurescript has the clojure standard library, which includes many more functions than javascript.
+
+The left-pad incident made me realize how weak a standard library javascript has. People need to write so many tiny libraries in order to get functionality that would exist in other languages.
+
+Another clojurescript advantage is that it comes with immutable datastructures built in. No need to pull in immutable.js.
+
+If you're going to use react for building views, there are plenty react wrapper libraries to choose from in clojurescript. My personal favorite is Reagent. I find the Hiccup HTML syntax great too as that eliminates the need for a separate step to transform your JSX to HTML.
+
+You'll also get to share code between your backend and frontend with cljc. This isn't like the false promises people made when node.js first came out with sharing code between client and server. You really can share code on client and server.
+
+One way to go about this is to develop your business and domain logic in .cljc files. Then you can leverage clojure's edn data format or preferrably transit json (because it's faster) to send data back and forth.
+
+Something else I've tried is writing data validations in .cljc files. Then you can immediately validate data on the client side to give your users instant feedback and validate it again once it gets to the server with the same code.
+
+One last thing about clojurescript. The tooling is fantastic. We have dev cards and fig wheel. I've even heard stories from people that have developed front end components in a TDD style for hours without needing to look at a browser.
+
+Another thing I realized since writing the original post is the lack of full stack, Rails like web frameworks is not a big of a deal as I thought, mainly due to the popularity of microservice architectures. Microservices are popular now which means teams end up writing many small services that powers a front end single page application.
+
+Anyw
+Clojure Web Development Made Simple
+
+http://www.luminusweb.net/
+
+Luminus is a Clojure micro-framework based on a set of lightweight libraries. It aims to provide a robust, scalable, and easy to use platform. With Luminus you can focus on developing your app the way you want without any distractions.
+--
+https://github.com/alaisi/postgres.async
+
+Embrace SQL with HugSQL, Clojure and PostgreSQL
+
+clojure list vector, map, set example
+clojure datomic k
+clojure with postgresql
+code async
+clolure orm
+
+----
+emacs clojure setup 
+clojure orm if exist
+how to start compnay in madina
+clojure concurrent video in clojuretv
+transit format
+zeromq
+why 
+clojure zeromq
+
+---
+https://github.com/cognitect/transit-format
+
+https://chocolatey.org/packages/Emacs
+https://www.gnu.org/software/emacs/download.html#windows
+--
+(ns zguide.hwclient
+  (:require [zeromq.zmq :as zmq]))
+
+(defn -main []
+  (let [context (zmq/context 1)]
+    (println "Connecting to hello world server…")
+    (with-open [socket (doto (zmq/socket context :req)
+                         (zmq/connect "tcp://127.0.0.1:5555"))]
+      (dotimes [i 10]
+        (let [request "Hello"]
+          (println "Sending hello " i "…")
+          (zmq/send-str socket request)
+          (zmq/receive socket)
+--
+https://github.com/lynaghk/zmq-async          
+---
+https://www.youtube.com/watch?v=9G6-GksU7Ko&list=PLR0fsw0rQ3SSeH1BeQIN5HfSxAdqDhS4F
+Build reliable, traceable, distributed systems with ZeroMQ
+
+https://www.youtube.com/watch?v=QCt1q7KNdvY
+Growing Clojure systems. From functions to microservices. by Marcin Bilski
+
+
+https://www.youtube.com/watch?v=_Cf-STRvFy8
+Faster Delivery with Pedestal and Vase - Paul deGrandis
+
+
+From REST to CQRS with Clojure, Kafka, & Datomic - Bobby Calderwood
+
+https://www.youtube.com/watch?v=qDNPQo9UmJA
+---
+
+http://www.finance-guy.net/streetonomic/money-with-tupperware
+In 1946, Earl Tupper released his first patented airtight container, which he called 'Tupperware'.  He felt that the best way to make sales was to demonstrate how the new concept worked, and how it could be used.
+
+By 1949, his idea for demonstrating products had evolved into the direct selling model we now know as the 'Tupperware Party'.  It did not take long for Tupperware to become known as the ideal opportunity for stay at home moms looking to make a little extra income.
+
+When it comes to network marketing, we think you can't make money with multi-level marketing.  Tupperware has a distinct advantage over most MLMs in that there is a noticable retail market for Tupperware.  Like most married men, I can say that I've seen more than a few dollars worth of Tupperware in my own kitchen.  This lead me to wonder if Tupperware was different, maybe the ladies hosting the parties were making a good living.  We decided it was time to take a streetonomic review of Tupperware to see if the sales force is making money.
+--
+https://www.youtube.com/watch?v=jwVhYx9_L-c
+Tupperware products are good quality and last a long time, I know this from personal experience.  A selection of Tupperware containers appeared in my kitchen a little over 2 years ago.  Despite the frequent use all of our Tupperware containers are still in perfect condition, with all lids still locking on as tightly as ever, we have not had to replace any of our Tupperware.
+
+Unlike most MLMs that we have looked at, Tupperware doesn't try to pretend that the business is not about making sales.  When new members join the Tupperware sales force, they are given a copy of the Tupperware Business Binder, which contains some basic sales training.  Tupperware consultants know that to be successful in MLM, you need to sell lots of product.
+
+Unlike most MLMs, Tupperware does not sell products which need to be replaced on a regular basis.  Most MLMs focus on products such as cosmetics or diet products, which if used, will need to be replaced regularly.  The company can make repeat sales to the same customer every month until they stop being a customer.  Tupperware products do not require frequent replacement so it will be unlikely that you will have customers who make regular purchases.  In order to make regular sales, Tupperware consultants need to constantly prospect for new customers
+
+--
+Are Consultants Making Money With Tupperware
+
+To answer this question we started on the Tupperware Investor Relations page, which shows some of the financial highlights achieved by Tupperware in 2015.  One of the slides shows that Tupperware made $2.3 Billion worth of sales, and had a sales force of 3.1 Million consultants.  We then went back to the Tupperware business binder and found that consultants can earn up to a maximum of 35% commission on their personal sales.
+
+After doing some calculations, we believe that most Tupperware consultants are not making enough sales to earn a substantial income.  Even if they all earned 35% on every sale, then the average commission paid to Tupperware consultants in 2015 would have been $260 for the entire year.  That's less than $22 a month.  The Tupperware financial data and our calculations are shown in the table below:
+Based on 2015 Tupperware financial results
+--
+https://affiliateunguru.com/can-selling-tupperware-online-really-make-you-money
+---
