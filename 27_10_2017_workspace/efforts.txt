@@ -427,3 +427,35 @@ https://simbi.com/howitworks
 the problem is bartering replacing by currency, may it be virtual
 there wont be person who need your skill
 then you can not earn currency, you can not have service
+
+the micro videos
+only as short of 1 minute
+
+1minutevideo
+
+even if possible 1 second video
+
+1 minute video
+you record video for 1 minute, upload it youtube
+write review for 1minute
+read blog post
+read facebook commente, groups
+call someone for 1 minute
+zikir for 1 minute
+
+i have just 1 minnute
+--
+almost 1 minute to upload to video from  ispringfree 
+
+how to upload video to youtube nodejs
+
+https://github.com/IonicaBizau/youtube-api
+https://www.codementor.io/johnnyb/uploading-videos-to-youtube-with-nodejs-google-api-du107ynot
+
+---
+exchange backend for front end design
+earn money through youtube
+https://creatoracademy.youtube.com/page/lesson/revenue-basics
+---
+build audience
+10K mark -> policy -> adsense
