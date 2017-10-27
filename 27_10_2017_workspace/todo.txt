@@ -1,6 +1,13 @@
+8th/30
 1)build the product
 2)apply remote jobs
 3)learn
 4)take break
 5)Spent time with family(parents, wife, kids), relatives, friends
 6)prayers
+7)learn arabic a word
+---
+
+todo2.txt
+try install screen recorder, uploader in android phone
+create androdi app with clojurescript
