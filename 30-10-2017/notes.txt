@@ -3,3 +3,41 @@ write in the same blog ikbhal.blogspot.in
 android app using clojurescript
 reagent framework
 Q. What is easy to write , efficient mobile development framework?
+------
+todo website using clojure only
+front end anthing ok
+local running, no need hosting
+
+reference:
+https://github.com/practicalli/clojure-webapps-example/blob/01-create-a-webserver/src/webdev/core.clj
+
+(ns webdev.core
+	(:require [ring.adapter.jetty :as jetty]))
+
+(defn -main
+	"A very simple web server using Ring & Jetty"
+	[port-number]
+	(jetty/run-jetty
+		(fn [request] {:status 200
+									 :bdoy "Hello, Clojure World"
+									 :headers {}})
+		(:port (Integer. port-number))
+	)
+	)
+---
+https://github.com/innoq/tutorial-clj-webapp	
+
+lein ring server
+---
+docker build -t my-clojure-app .
+$ docker run -it --rm --name my-running-app my-clojure-app
+---
+C:\Users\ikbhal\workspace\om-next-demo
+https://github.com/swannodette/om-next-demo
+
+-0--
+https://hub.docker.com/r/library/clojure/
+---
+i am okay with boot instead of lein
+---
+https://github.com/oakes/full-stack-boot-example
