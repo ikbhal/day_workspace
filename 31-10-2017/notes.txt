@@ -1,0 +1,89 @@
+
+Jan Koum 
+	 felt giving up and looking for new job
+	 savings: $4,00,000 from yahoo
+
+Brian Acton pursuaded five former friends in Yahoo to invest $2,50,000 in seed funding
+acton become cofounder
+
+Brian Acton
+ officially joined on  Nov 1
+
+Koum hired a friend  who lived in Los angels, Chris Peiffer to develop Blackberry versoin
+two months after that launch
+---
+whatsapp  was switched  from a free to paid service
+	to avoid growing too fast
+	primary cost was sending verification text to users.
+
+Dec, 2009 -> ability to send photos
+
+early 2011 -> top 20  apps in Apple US app store
+
+2011, April ->  Sequoia capital  , 8 millions, 15% , partner name: Jim Goetz
+
+2013, feb -> 200 mill users, 50 staff, investment: $50 million,  valuation: 1.5 billion
+2013, dec -> 400 milion active users
+
+2014, feb -> acquisition , 19$ billion
+
+2016, feb one billion users
+---
+robin li
+---
+global first, mobile first
+business sustainability and revenue rather than getting  big fast
+---
+simple, secure, fast
+---
+oum and Acton wanted WhatsApp to be different, they did not seek attention and didn’t even have a sign at their office. Both men share a passion for hating advertisement and Jan even has a note from Brian on his desk saying “No Ads! No Games! No Gimmicks”.
+---
+You are never too old to start a business, not even a tech business. Acton even argues that their age is an advantage, saying that his vision is not clouded by the urge to be cool, they just want to be practical.
+--
+Persistence is the only way. The story of Koum is one of a lot hardship and let downs, Brian lost a fortune in the dotcom bubble and got rejected by multiple companies, but both men came out on top through hard work and perseverance.
+---
+Having a common interest is key to success. One might argue that if there was no ultimate frisbee, there would be no Whatsapp. These men became friends on the workfloor, but stayed in contact through their love for the sport. And it was at one of these matches Acton told Koum that he shouldn’t give up.
+--
+Make sure your co-founder is the yin to your yang. You can really see in this case how important it is that the person you work with fills the gaps that you are missing. Your co-founder should have all the qualities you don’t have.
+---
+Think long term, together. Acton and Koum had a clear vision of what their product was going to be. They both were on the same page and understood exactly what their product is and more important, what is was going to be.
+---
+new market
+as early as <1 year < 7 months
+---
+hire some one , which you can not do
+---
+oum updated WhatsApp so that each time the user changed their statuses, it would ping everyone in the user's network.WhatsApp 2.0 was released with a messaging component and the active users suddenly swelled to 250,000. Koum visited Acton, who was still unemployed while managing another startup and decided to join the company
+---
+new market,
+new technology
+new opportunity, or risk
+
+new market by big companies
+AWS market place
+apple iphone store
+google android store
+
+---
+producers.
+
+2. STAR HOLLOW FARMS
+
+Star Hollow started out selling their goods through the community-supported agriculture (CSA) model, where customers pay an up-front fee in the early season for a weekly box of freshly harvested produce. But in response to the growing number of CSA customers who wanted to choose exactly what they got in the box each week, farmers Randy and Chris Treichler planted the seed for an online market in 2003. Star Hollow Farms is now an online CSA where customers pay $300 up-front in store credit, which they can then use up with each online order to get the specific produce they want.
+---
+https://www.babble.com/best-recipes/online-farmers-market-organic-buy-local/
+---
+1. FARMER GIRLS
+
+When local farmers Deborah Williamson and Deanna Child noticed a disconnect between local produce and the local consumers who should have been buying it, they decided to sell their stuff online. The pair even took things a step further by developing custom software for other farmers to follow suit online. Now, with this easy-to-use online market (that’s also one of the best looking sites out there), they sell a huge variety of goods from local farmers and producers.
+--
+http://ww1.farmergirls.net/
+---
+list of online marketplaces
+---
+online marketplace, store, 
+open your api, let other develop things, integrates services
+chrome browser, sublime plugin, facebook apps
+--
+launched by big comapnies
+you come to know about them by big companies year conference, product launch
