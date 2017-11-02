@@ -1,0 +1,226 @@
+github clojure examples, clojurescript examples
+github elixir example, phoenix examples
+github datomix examples
+github clojure concurrency
+github elixir concurrency
+github elm examples
+comparision of clojure vs elixir
+---
+ocamal engineer
+haskel engineer
+lightbend
+scala
+akka
+play
+kafka
+Casandra
+--
+Scala Akka Kafka Cassandra
+---
+Scala Engineer
+Tapad
+
+$150,000 + Benefits
+60 Madison Ave, 3rd Floor New York, NY 10010, New York, United States
+Scala Akka Spark
+---
+Software Engineer - Scala
+Hopper
+
+$90,000 - $140,000 CAD
+5795 De Gaspé, Suite 100, QC H2S 2X3, Montreal, Canada
+Scala Elasticsearch Javascript
+---
+daml
+Senior Software Engineer
+Digital Asset
+
+$150,000-$190,000 + stock units
+96 Spring Street, NY 10012, New York, United States
+Java Java 8 Javascript Haskell Scala Daml Blockchain Distributed Ledger
+Building Distributed Ledger Technology for the Financial Markets
+---
+purescript
+---
+Senior Software Engineer
+Curalate
+
+$150,000 to $180,000 + stock
+129 W 29th St, 8th Floor, New York, NY 10001, United States, New York, United States
+Scala Storm Spark Kafka
+---
+Lead Software Engineer
+Maana
+
+$175,000 +
+10655 NE 4th St Bellevue, WA 98004, Seattle, United States
+Scala Haskell F# Hadoop
+---
+Scala Engineer
+Lightbend
+
+$150,000 - $175,000
+Westport, Connecticut, or Remote, United States
+Scala Akka Play Cassandra Spark Hadoop
+Remote
+---
+haskel
+
+http://learnyouahaskell.com/introduction
+---
+https://www.youtube.com/watch?v=MrYOnQTXWzs
+
+
+---
+https://www.youtube.com/watch?v=y7X4fM2gn2M
+Think. Create. Code | AdelaideX on edX | Course About Video
+
+---Think. Create. Code | AdelaideX on edX | Course About Video
+
+Creating The Never-Ending Bloom
+---
+http://www.rujumargam.tv/
+http://www.islamicchannel.in/uirc-telugu-islam-dawah-life-after-death-full-video/
+http://teluguislamicvideos.com/
+---
+pschymetric analaysis
+action man, idea man, process man, people man
+
+---
+https://www.youtube.com/watch?v=B5p2A5mazEs
+-
+
+reading habits of warrent buffet, billgates, famous people
+---
+investment on brain
+15% investment return 
+10 to 12 % hike doest not take you any were
+inflation of 9%
+30% tax will eat away
+---
+lower level always problem
+go to higher level
+---
+avoid mundane task to some other
+driver 10k salary , 20k salary
+---
+read a book in  every month
+read a book in every two months
+
+read a book in a month
+---
+being successful by reading books
+---
+read 50 books in a year billgates
+--
+out of turn or 
+turn by turn
+---
+wind fall gain nahi
+---
+compound growth
+compound effect
+---
+cash investment =-> depend on market
+---
+avoid taking more relax, watching tvs, entertainment
+focus on useful growth, exercise, prayers
+---
+Overall experience of 5-8 years is required.
+Platform/Framework: Play in Java, Spring or Struts, Akka in Java
+Candidate should be comfortable in java 8. Should have exposure to Stream API, CompletionStage, Future, Promise etc.
+Core Java Mandatory Skills: Annotations, Generics, Collections, Concurrency, Functional interfaces, Lambada Expressions etc.
+Reactive Programming knowledge is preferred.
+Should be able to create/consume Restful APIs.
+Caching: Memcache /Redis.
+Web Servers: Exposure to Apache/Nginx
+Test tools : JUnit
+----
+learn 
+1)play framework
+2)akka framwork
+3)java 8
+4)redis
+5)Spring boot
+6)Nginx
+7)Junit
+----
+learn akka framework
+
+1)Simpler Concurrent & Distributed Systems
+Actors & Streams
+2)Resillient by Design
+Akka allows you to write systems that self-heal and stay responsive in the face of failures.
+3)High Performance
+Up to 50 million msg/sec on single machine.
+Small memory foot print; ~2.5 million actors per GB of heap.
+
+4)Elastic & Decentralized
+Distributed systems without single points of failure. Load balancing and adaptive routing across nodes. Event Sourcing and CQRS with Cluster sharding. Distributed Data for eventual consistency using CRDTs
+
+5)Reactive Streaming Data
+Asynchronous non-blocking stream processing with backpressure. Fully async and streaming HTTP server and client provides a great platform for building microservices. Streaming integrations with Alpakka
+----
+
+Build powerful reactive concurrent and distributed applications more easily.
+---
+actor model
+---
+companies using
+PayPal, Wlamat, Hootsuit, amazon.com
+---
+version: 2.5.6
+
+Try Akka 2.5.6 version
+work with Java, Scala
+---
+Akka QuickStart with Java
+
+Akka is a toolkit and runtime for building highly concurrent, distributed, and fault-tolerant event-driven applications on the JVM.  Akka can be used with both Java and Scala.
+
+Q.What is Actor?
+Actors are the unit of execution in Akka.
+
+Q.What is Actor Model?
+A. The Actor model is an abstraction that makes it easier to write correct concurrent, parallel and distributed systems.
+
+Q.What is Lightbend Tech Hub?
+A
+
+Q. Akka Getting started link?
+A. 
+https://doc.akka.io/docs/akka/2.5/java/guide/introduction.html
+
+Q. Hello world of Akka?
+A.
+https://developer.lightbend.com/start/
+mvn compile exec:exec
+
+or gradle run
+
+
+Q. Lagom?
+A. Powerful Reactive Microservices.
+Lagom allows developers to run a whole system of microservices from a single command.
+
+Q. Play Framework?
+A. Create a reactive web application project.
+Play framework is a high velocity, modern, scalable and fun way to create web applications
+
+Q. What is Actor System?
+A. Actor System is a container where Actors run.
+
+Q. Benefits of using the Actor Model?
+A.
+Event Driven Model - Actors perform work in response to messages. Communication between Actors is asynchronous, allowing Actors to send messages and continue their own work
+without blocking to wait for a reply.
+
+Strong isolation principles - Unlike regular objects in Java, an Actor does not have a public API in terms of methods that you can invoke. Instead, its public API is defined through messages that the actor handles. This prevents any sharing of state between Actors; the only way to observe another actor's state is by sending it a message asking for it.
+
+-> Location transparency 
+The system constructs Actors from factory and returns references to the instances. Because location doesnt matter, Actor instances can start, stop, move and restart to scale up and down as well as recover from unexpected failures.
+
+-> Lightweight 
+Each instance only a few hundres bytes, which realistically allows millions of concurrent Actors to exist in a single application.
+---
+https://doc.akka.io/docs/akka/2.5/java/guide/introduction.html
